@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home Page</title>
-    <link type="text/css" rel="stylesheet" href="css/style.css"/>
-</head>
-<body>
+<?php
+	include('login.php'); // Include Login Script
 
+	if ((isset($_SESSION['username']) != ''))
+	{
+		header('Location: home.php');
+	}
+?>
+
+<!doctype html>
+<html>
 <header>
     <h1>1307260 BugTracker website Course work CMM503</h1>
 
@@ -20,32 +22,21 @@
     </nav>
 </header>
 
-<main>
-    <h2>Bugtracker Webdevelopment example</h2>
-    <p>This website is used to keep track of all of my mugs</p>
-
-    <div id="mugContainer">
-        <h3>Mug Name</h3>
-        <img src="BugTracker/assets/images/mug1.png" alt="my mug">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<body>
+<div align="center">
+    <h1 style="font-family:Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', serif; font-size:32px;">PHP Login Form with Session</h1>
+    <div class="loginBox">
+        <h3>Login Form</h3>
+        <br><br>
+        <form method="post" action="">
+            <label>Username:</label><br>
+            <input type="text" name="username" placeholder="username" /><br><br>
+            <label>Password:</label><br>
+            <input type="password" name="password" placeholder="password" />  <br><br>
+            <input type="submit" name="submit" value="Login" />
+        </form>
+        <div class="error"><?php echo $error;?></div>
     </div>
-
-    <div id="mugContainer">
-        <h3>Mug Name</h3>
-        <img src="BugTracker/assets/images/mug2.png" alt="my mug">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-
-    <div id="mugContainer">
-        <h3>Mug Name</h3>
-        <img src="BugTracker/assets/images/mug3.png" alt="my mug">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-</main>
-
-<footer>
-    <p>(c) 2016 CMM503 Web Design</p>
-</footer>
-
+</div>
 </body>
 </html>
