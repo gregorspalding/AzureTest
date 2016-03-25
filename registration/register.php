@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <title>Registration Form</title>
-dwaaaaaad</head>
+</head>
 
 <body>
 	<form method="post" action="">
